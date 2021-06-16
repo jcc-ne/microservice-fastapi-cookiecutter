@@ -1,0 +1,7 @@
+{
+    "microservice_name": "microservice example",
+    "database_host_dev": "0.0.0.0",
+    "database_name_dev": "test_db",
+    "database_user_dev": "postgres",
+    "database_password_dev": "<pgpasswd>"
+}
