@@ -1,7 +1,19 @@
 {
-    "microservice_name": "microservice example",
-    "database_host_dev": "0.0.0.0",
+    "microservice_name": "microservice_example",
+
+    "database_host_dev": "<database_host_dev>",
     "database_name_dev": "test_db",
     "database_user_dev": "postgres",
-    "database_password_dev": "<pgpasswd>"
+    "database_password_dev": "<pgpasswd>",
+    "cloud_sql_instances_dev": "<gcloud sql connection name proj:region:database_name in dev>",
+
+    "redis_host_dev": "<redis_host_dev>",
+
+    "database_host_prod": "<database_host_prod>",
+    "database_name_prod": "<database_name_prod>",
+    "database_user_prod": "postgres",
+    "database_password_prod": "<pgpasswd>",
+    "cloud_sql_instances_prod": "<gcloud sql connection name proj:region:database_name in prod>",
+
+    "redis_host_prod": "<redis_host_prod>"
 }

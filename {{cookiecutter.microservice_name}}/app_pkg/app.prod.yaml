@@ -1,0 +1,37 @@
+service: {{cookiecutter.microservice_name}}-prod
+env: flex
+runtime: python
+entrypoint: gunicorn -w 4 -k uvicorn.workers.UvicornWorker main:app
+
+
+runtime_config:
+  python_version: 3
+
+
+resources:
+  cpu: 2
+  memory_gb: 6
+  # disk_size_gb: 50
+  
+
+automatic_scaling:
+  min_num_instances: 2
+  max_num_instances: 8
+  cool_down_period_sec: 180
+  cpu_utilization:
+    target_utilization: 0.65
+
+
+env_variables:
+  DATABASE_HOST: "{{cookiecutter.database_host_prod}}"
+  DATABASE_USER: "{{cookiecutter.database_user_prod}}"
+  DATABASE_PASSWORD: "{{cookiecutter.database_password_prod}}"
+  DATABASE_PORT: 5432
+  DATABASE_NAME: "{{cookiecutter.database_name_prod}}"
+  REDIS_HOST: "{{cookiecutter.redis_host_prod}}"
+  REDIS_PORT: 6379
+  APP_ENV: "PROD"
+
+
+beta_settings:
+  cloud_sql_instances: "{{cookiecutter.cloud_sql_instances_prod}}"
