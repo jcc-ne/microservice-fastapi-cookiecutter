@@ -23,3 +23,15 @@ INFO:     Started reloader process [92911] using statreload
 ...
 ```
 open browser to the url shown http://0.0.0.0:8081/docs
+
+### Deploy to cloud (GCP version)
+
+Follow instructions on [Install google-cloud-sdk](https://cloud.google.com/sdk/docs/install) to install the
+command line tool
+
+```
+cd <project>
+make gcloud-deploy-dev
+
+# -- follow instructions
+```
